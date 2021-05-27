@@ -18,9 +18,12 @@ const classNamesForLoading = [
 5. drag this project file from root(ALL files) and drop into `chrome://extensions` page
 
 ## author and contributor
+
 * Yuki-Kikuya
 * Mr.fj
+* Mr.tm
 * and so on.
 
 ## Acknowledgements
+
 I would like to thank Mr. fj for greatful idea specially.
