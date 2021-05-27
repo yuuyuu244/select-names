@@ -1,0 +1,87 @@
+/* ------------------ 全体的操作 ------------------------- */
+/* 文字フォントを変更 */
+body {
+    font-family:'メイリオ',Meiryo;
+}
+
+/* ヘッダーの操作(中央揃え) */
+header {
+  text-align: center;
+  /* background-color: #000000; */
+  /* color : #ffffff; */
+
+}
+
+/* マージンの操作 */
+.box1 p {
+    margin: 0; 
+    padding: 0;
+}
+
+/* ------------------ 個別的操作 ------------------------- */
+
+/* ------------------- ①タイトル ------------------------ */
+
+/* タイトルのデザイン */
+h1 {
+  /*線の種類（実線） 太さ 色*/
+  border-bottom: solid 3px black;
+  /* margin:0 auto; */
+  display: inline-block;
+  text-align:center;
+  /* padding : 10px 0; */
+}
+
+
+/* --------------------- ②ボタン ---------------------------- */
+
+/* ボタンのデザインについて */
+.btn-flat-border {
+  display: inline-block;
+  padding: 0.3em 0.7em;
+  text-decoration: none;
+  color: #67c5ff;
+  border: solid 2px #67c5ff;
+  border-radius: 3px;
+  transition: .4s;
+  background-color:#FFFFFF;
+}
+
+/* ボタンの中央寄せ */
+.buttons, .classes {
+    text-align:center;
+}
+
+/* クラス名ボタンのサイズ統一 */
+.classes>button {
+  width: 55px;
+  height: 30px;
+  font-size: 12px;
+}
+
+/* マウスオーバー時のボタンの挙動を記述 */
+.btn-flat-border:hover {
+  background: #67c5ff;
+  color: white;
+}
+
+/* ------------------- ③名前表示欄 ---------------------- */
+
+/* 名前表示欄を中央寄せ */
+p, #ChromePlugin-result-disp {
+    text-align:center;
+}
+
+/* 名前表示欄のデザイン */
+.box1 {
+    padding: 0.5em 0.5em;
+    margin: 1em 0;
+    font-weight: bold;
+    border: solid 3px #000000;
+    font-size:27px;
+}
+
+
+/* Created-By : Yuki-Kikuya 
+ * date : 2020/07/13 
+ */
