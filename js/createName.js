@@ -1,9 +1,20 @@
 /**
+ * select names randomly
  * $Date$
+ * $Author$ : Yuki-Kikuya
  */
-var isClick = false;
-var cnt = 0;
-var className;
+// var isClick = false;
+// var cnt = 0;
+const classNameOfFirst = "template";
+const classNamesForLoading = [
+	"template",
+	"template",
+	"template"
+	// "2021h_FE24", 	/* 国対2021年度 FE24 */
+	// "2021_R3A",		/* 2021年度 大学併修学科A */
+	// "2021_R3B",		/* 2021年度 大学併修学科B */
+	// "2021_R3"		/* 2021年度 大学併修学科ALL */
+];
 
 /**
  * load the name argument.
@@ -15,108 +26,44 @@ function loadClass(className){
 		document.head.appendChild(script);
 }
 
-loadClass("2020_1st_all");
+/**
+ * load the default of name.  
+ */
+loadClass(classNameOfFirst);
 
-document.addEventListener("DOMContentLoaded", function() {
-    // オンクリックリスナー
-	// startボタンが押されたら実行される
-	// 
-	document.getElementById("start").addEventListener("click", function(){
+let clickflow = null;
+
+/**
+ * Trigger DOM Content Loaded
+ */
+document.addEventListener("DOMContentLoaded", () => {
+    // OnClickListener
+	// id of "stop" button
+	document.getElementById("start").addEventListener("click", () => {
 	    console.log("click select");
 	    isClick = false;
-//	    if(!isClick){
-//	        return;
-//	    }
-        clickflow();
+		if(clickflow===null) {
+			clickflow = setInterval(()=> {
+					let idx = Math.floor(Math.random() * names.length);
+					document.getElementById("ChromePlugin-result-disp").innerHTML = names[idx];
+			},1);
+		}
 	});
 
-	// オンクリックリスナー
-	// stopボタンが押されたら実行される
-	document.getElementById("stop").addEventListener("click", function(){
+    // OnClickListener
+	// id of "stop" button
+	document.getElementById("stop").addEventListener("click", () => {
 	    console.log("clicked stop");
-	    if(isClick) {
-	        isClick =false;
-	    } else {
-	        isClick = true;
-	    }
+		if (clickflow) {
+			clearInterval(clickflow);
+			clickflow = null;
+		}
 	});
-
-	// // 2020_1st_allボタンが押された処理
-	// document.getElementById("2020_1st_all").addEventListener("click", function(){
-	// 	loadClass("2020_1st_all");
-
-	// });
-
-	// // 2020_r1caボタンが押された処理
-	// document.getElementById("2020_r1ca").addEventListener("click", function(){
-	// 	loadClass("2020_r1ca");
-
-	// });
-	
-	// // 2020_r1cbボタンが押された処理
-	// document.getElementById("2020_r1cb").addEventListener("click", function(){
-	// 	loadClass("2020_r1cb");
-	// });
-	
-	// // 2020_s1ボタンが押された処理
-	// document.getElementById("2020_s1").addEventListener("click", function(){
-	// 	loadClass("2020_s1");
-	// });
-	
-	// // 2020_j1ボタンが押された処理
-	// document.getElementById("2020_j1").addEventListener("click", function(){
-	// 	loadClass("2020_j1");
-	// });
-	
-	// // 2020_s2aボタンが押された処理
-	// document.getElementById("2020_s2a").addEventListener("click", function(){
-	// 	loadClass("2020_s2a");
-	// });
-	
-	// // 2021春 国家試験対策
-	// document.getElementById("2021h_FE13").addEventListener("click", function(){
-	// 	loadClass("2021h_FE13");
-	// });
-
-	// // 2021春 国家試験対策
-	// document.getElementById("2021h_FE14").addEventListener("click", function(){
-	// 	loadClass("2021h_FE14");
-	// });
-
-	// 2021春 国家試験対策(FE24)
-	document.getElementById("2021h_FE24").addEventListener("click", function(){
-		loadClass("2021h_FE24");
-	});
-
-	// 2021春 国家試験対策
-	document.getElementById("2021_R3A").addEventListener("click", function(){
-		loadClass("2021_R3A");
-	});
-	// 2021春 国家試験対策
-	document.getElementById("2021_R3B").addEventListener("click", function(){
-		loadClass("2021_R3B");
-	});
-	// 2021春 国家試験対策
-	document.getElementById("2021_R3").addEventListener("click", function(){
-		loadClass("2021_R3");
-	});
+	// OnClickListener
+	// set the Listener of class names of html id
+	for(let id of classNamesForLoading) {
+			document.getElementById(id).addEventListener("click", ()=>{
+				loadClass(id);
+			});
+	}
 });
-
-
-
-// グルグルと表示を変更させる関数
-let clickflow = () => setTimeout(()=> {
-	    if(isClick) {
-	        isClick = false;
-            return;
-        }
-
-        if(cnt < names.length - 1) {
-            cnt++;
-        } else {
-            cnt = 0;
-        }
-        document.getElementById("ChromePlugin-result-disp").innerHTML = names[cnt];
-        
-        clickflow();
-},1);
