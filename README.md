@@ -17,7 +17,7 @@ const classNamesForLoading = [
    you should switch ON of 'developer mode'
 5. drag this project file from root(ALL files) and drop into `chrome://extensions` page
 
-## author and contributor
+## author and contributors
 
 * Yuki-Kikuya
 * Mr.fj
