@@ -1,7 +1,14 @@
+/**
+ * $Date$
+ */
 var isClick = false;
 var cnt = 0;
 var className;
 
+/**
+ * load the name argument.
+ * @param {string} className 
+ */
 function loadClass(className){
 		var script = document.createElement('script');
 		script.src = "./js/" + className + ".js";
