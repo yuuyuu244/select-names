@@ -21,7 +21,7 @@ const classNamesForLoading = [
 ## Future Prospects
 
 1. I wanna control priority levels of select items  
-2. I wanna make configuration ** short and simple **  
+2. I wanna make configuration **short and simple**  
 
 ## author and contributors
 
