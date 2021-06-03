@@ -28,14 +28,10 @@ function loadClass(className) {
 	document.head.appendChild(script);
 }
 
-function getJSON(filepath) {
-	const xhr = new XMLHttpRequest();
-	xhr.open('GET', chrome.runtime.getURL(filepath), false);
-	xhr.send(null);
-
-	if (xhr.status == 200) {
-		return JSON.parse(xhr.response);
-	}
+async function getJSON(filepath) {
+	const response = await fetch(chrome.runtime.getURL(filepath));
+	const json = await response.json();
+	return json;
 }
 
 /**
@@ -52,7 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
 			nameList = nameList.concat(tempNameList[key]);
 		}
 
-		isClick = false;
 		if (clickflow === null) {
 			clickflow = setInterval(() => {
 				let idx = Math.floor(Math.random() * nameList.length);
@@ -80,10 +75,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	for (let id of classNamesForLoading) {
 		let checkbox = document.getElementById(id);
-		checkbox.addEventListener('click', () => {
+		checkbox.addEventListener('click', async () => {
 			if (checkbox.checked) {
 				console.log('--checked--');
-				const json = getJSON('json/' + id + '.json');
+				const json = await getJSON('json/' + id + '.json');
 				tempNameList[id] = json.names;
 			} else {
 				console.log('--unchecked--');
