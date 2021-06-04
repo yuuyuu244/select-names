@@ -48,7 +48,7 @@ h1 {
 }
 
 /* ボタンの中央寄せ */
-.buttons, .classes {
+#checkbox-area, .buttons {
     text-align:center;
 }
 
