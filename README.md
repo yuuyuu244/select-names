@@ -1,7 +1,7 @@
 # Select names rondomly
 
 ## Usage
-1. create the json of yours in `./json/[any name].json`
+1. create the json of yours in `./json/[any name].json`  
    e.g.
 ```
 {
@@ -13,8 +13,9 @@
     ]
 }
 ```
-   default json file name is `template.json`. so you should modify this.
-2. change items of `fileNamesForLoading` array in `./js/createName.js`
+   default json file name is `template.json`. so you should modify this.  
+   
+2. change items of `fileNamesForLoading` array in `./js/createName.js`  
    e.g.
 ```
 const fileNamesForLoading = [
