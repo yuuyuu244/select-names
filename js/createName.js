@@ -85,16 +85,19 @@ async function getJSON(filePath) {
 function createCheckbox(id, innerText) {
     const checkbox = document.createElement('input');
     const label = document.createElement('label');
+    const textNode = document.createTextNode(innerText);
 
     checkbox.type = 'checkbox';
     checkbox.id = id;
 
-    label.htmlFor = id;
-    label.innerText = innerText;
+    // label.htmlFor = id;
+
+    label.appendChild(checkbox);
+    label.appendChild(textNode);
 
     checkboxes.push(checkbox);
 
     const div = document.getElementById('checkbox-area');
-    div.appendChild(checkbox);
+    // div.appendChild(checkbox);
     div.appendChild(label);
 }
