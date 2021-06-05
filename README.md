@@ -1,6 +1,7 @@
 # Select names rondomly
 
 ## Usage
+
 1. create the json of yours in `./json/[any name].json`  
    e.g.
 ```
@@ -28,13 +29,17 @@ const fileNamesForLoading = [
    you should switch ON of 'developer mode'
 4. drag this project file from root(ALL files) and drop into `chrome://extensions` page
 
+## Future Prospects
+
+1. I wanna control priority levels of select items  
+2. I wanna make configuration **short and simple**  
+
 ## author and contributors
 
-* Yuki-Kikuya
-* Mr.fj
-* Mr.tm
-* and so on.
+* Yuki-Kikuya  
+* Mr.fj   
+* and so on.  
 
 ## Acknowledgements
 
-I would like to thank Mr. fj for greatful idea specially.
+I would like to thank Mr. fj for greatful idea specially.  
