@@ -1,7 +1,26 @@
 /* ------------------ 全体的操作 ------------------------- */
+:root {
+    --main-text: #333;
+    --main-bg: #fff;
+    --main-border: #333;
+    --main-button-bg: #FFFFFF;
+    --main-button: #67c5ff;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --main-text: #ddd;
+    --main-bg: #323232;
+    --main-border: #ddd;
+    --main-button-bg: #323232;
+    --main-button: #67c5ff;
+  }
+}
+
 /* 文字フォントを変更 */
 body {
     font-family:'メイリオ',Meiryo;
+    color: var(--main-text);
+    background-color: var(--main-bg);
 }
 
 /* ヘッダーの操作(中央揃え) */
@@ -25,7 +44,7 @@ header {
 /* タイトルのデザイン */
 h1 {
   /*線の種類（実線） 太さ 色*/
-  border-bottom: solid 3px black;
+  border-bottom: solid 3px var(--main-border);
   /* margin:0 auto; */
   display: inline-block;
   text-align:center;
@@ -41,11 +60,11 @@ h1 {
   display: inline-block;
   padding: 0.3em 0.7em;
   text-decoration: none;
-  color: #67c5ff;
-  border: solid 2px #67c5ff;
+  color: var(--main-button);
+  border: solid 2px var(--main-button);
   border-radius: 3px;
   transition: .4s;
-  background-color:#FFFFFF;
+  background-color:var(--main-button-bg);
 }
 
 /* ラベルのデザインについて */
@@ -74,8 +93,8 @@ label{
 
 /* マウスオーバー時のボタンの挙動を記述 */
 .btn-flat-border:hover {
-  background: #67c5ff;
-  color: white;
+  background: var(--main-button);
+  color: var(--main-button-bg);
 }
 
 /* ------------------- ③名前表示欄 ---------------------- */
@@ -90,7 +109,7 @@ p, #ChromePlugin-result-disp {
     padding: 0.5em 0.5em;
     margin: 1em 0;
     font-weight: bold;
-    border: solid 3px #000000;
+    border: solid 3px var(--main-border);
     font-size:27px;
 }
 
